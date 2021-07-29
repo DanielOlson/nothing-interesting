@@ -89,8 +89,7 @@ for f in all_files:
 
 
 print(Time.headerString())
-for t in times:
-	
+
 
 
 
