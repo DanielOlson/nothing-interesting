@@ -23,7 +23,7 @@ if len(sys.argv) != 3:
 in_dir = sys.argv[1]
 extension = sys.argv[2]
 
-all_files = [file for file in listdir(in_dir) if isfile(join(in_dir, file)) and file.endswith(extension)]
+all_files = [join(in_dir, file) for file in listdir(in_dir) if isfile(join(in_dir, file)) and file.endswith(extension)]
 
 
 class Time():
