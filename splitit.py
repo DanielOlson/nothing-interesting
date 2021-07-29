@@ -1,5 +1,5 @@
 # Written by Daniel R. Olson 
-#		  on July 22 2022
+#		  on July 22 2021
 
 
 #Usage: splitit <input_file> <output_name> <symbols_per_file>
