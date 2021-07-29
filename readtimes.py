@@ -76,19 +76,21 @@ class Time():
 			val = line[line.find(': ') + 2:]
 			self.exit_status = val
 
-times = []
+#times = []
+print(Time.headerString())
 for f in all_files:
 	newTime = Time(f)
 	with open(f, 'r') as file:
 
 		for line in file:
 			newTime.readLine(line)
-		times.append(newTime)
+		print(str(newTime))
+		#times.append(newTime)
 
 
 print(Time.headerString())
 for t in times:
-	print(str(t))
+	
 
 
 
