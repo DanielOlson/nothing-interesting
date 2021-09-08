@@ -95,11 +95,11 @@ class SplitFileReader():
 				line = line.strip()
 				line = line.split(' ')
 				if stage == 0:
-					if line[0] == 'Sequence: ':
+					if line[0] == 'Sequence:':
 						stage = 1
 						seqName = line[1]
 	
-						if seqName != curSeq:
+						if seqName != self.curSeq:
 							self.curPos = 0
 							cpos = 0
 							self.curSeq = seqName
@@ -111,6 +111,19 @@ class SplitFileReader():
 					lineEnd = int(line[1]) - 1
 					lineScore = float(line[7])
 					self.seqs[seqName].append((lineStart + cpos, lineEnd + cpos, lineScore))
+
+				else:
+					if len(line) > 0:
+						if line[0] == 'Sequence:':
+							stage = 1
+							seqName = line[1]
+		
+							if seqName != self.curSeq:
+								self.curPos = 0
+								cpos = 0
+								self.curSeq = seqName
+								self.seqNames.append(seqName)
+								self.seqs[seqName] = []
 
 
 	def moveForMissingFile(self):
