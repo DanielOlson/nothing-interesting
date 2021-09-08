@@ -114,7 +114,7 @@ class SplitFileReader():
 
 
 	def moveForMissingFile(self):
-		self.curPos += seqLeng
+		self.curPos += self.seqLeng
 
 	def readFile(self, filePath):
 		if self.ultra:
